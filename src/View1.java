@@ -1,17 +1,16 @@
-import javax.swing.AbstractButton;
-import javax.swing.JButton;
-import javax.swing.JPanel;
-import javax.swing.JFrame;
-import javax.swing.ImageIcon;
+import javax.swing.*;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.nio.file.Path;
+import java.lang.Double;
+import java.util.regex.Pattern;
 
 public class View1 extends JFrame {
     protected JButton b1, b2;
+
     public void addlistener(ActionListener c) {
 
         //System.out.println("add listener " + c.getClass() + ' ' + c.getClass().getName());
@@ -20,6 +19,7 @@ public class View1 extends JFrame {
         b2.addActionListener(c);
 
     }
+
 
     public  View1(){//} throws MalformedURLException {
        // System.out.println(new File("/images/1pompa.gif").getAbsoluteFile());

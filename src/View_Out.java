@@ -73,6 +73,9 @@ public class View_Out extends JFrame implements ActionListener {
                 rozpisArray[i][0].addActionListener(this);
                 rozpisArray[i][1].addActionListener(this);
                 rozpisArray[i][2].addActionListener(this);
+                rozpisArray[i][0].setInputVerifier(new Verifier());
+                rozpisArray[i][1].setInputVerifier(new Verifier());
+                rozpisArray[i][2].setInputVerifier(new Verifier());
 
                 ++i;
             }

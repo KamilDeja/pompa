@@ -1,11 +1,16 @@
+import com.sun.org.apache.xpath.internal.operations.Mod;
+
 import javax.swing.*;
 
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.util.regex.Pattern;
 
 
 public class View2 extends JFrame implements ActionListener {
+
+
     JTextField imie_nazwisko,insulina,procent_bazy;
     JLabel l_imie_nazwisko, l_insulina;
     int nrpos=6;
@@ -24,17 +29,19 @@ public class View2 extends JFrame implements ActionListener {
     public  View2() {
 
         imie_nazwisko= new JTextField("Adam Nowak");
-        imie_nazwisko.setPreferredSize(new Dimension(100,20));
+        imie_nazwisko.setPreferredSize(new Dimension(100, 20));
 
         l_imie_nazwisko= new JLabel("Imie i nazwisko pacjenta");
 
         insulina= new JTextField("30");
         insulina.setPreferredSize(new Dimension(60, 20));
+        insulina.setInputVerifier(new Verifier());
 
         l_insulina= new JLabel("Dobowe zapotrzebowanie na insuline (j.)");
 
         procent_bazy= new JTextField("30");
         procent_bazy.setPreferredSize(new Dimension(40, 20));
+        procent_bazy.setInputVerifier(new Verifier());
 
         String[] przedzial_wiekowy = { " ","0-5", "5-11", "11-18" };
         wiek= new JComboBox(przedzial_wiekowy);
@@ -71,10 +78,13 @@ public class View2 extends JFrame implements ActionListener {
             posilkiArrayWW[i][1]= new JTextField();
             posilkiArrayWW[i][0].setPreferredSize(new Dimension(30, 20));
             posilkiArrayWW[i][1].setPreferredSize(new Dimension(30, 20));
+            posilkiArrayWW[i][0].setInputVerifier(new Verifier());
+            posilkiArrayWW[i][1].setInputVerifier(new Verifier());
             posilkiArrayWW[i][0].setVisible(false);
             posilkiArrayWW[i][1].setVisible(false);
             posilkiArraykcal[i]= new JTextField();
             posilkiArraykcal[i].setPreferredSize(new Dimension(50, 20));
+            posilkiArraykcal[i].setInputVerifier(new Verifier());
             posilkiArraykcal[i].setVisible(true);
         }
 
